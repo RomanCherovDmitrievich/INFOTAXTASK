@@ -1,0 +1,12 @@
+/Users/sigm/Work/InfotexTask/build/CMakeFiles/edit_cache.dir
+/Users/sigm/Work/InfotexTask/build/CMakeFiles/rebuild_cache.dir
+/Users/sigm/Work/InfotexTask/build/Task/CMakeFiles/edit_cache.dir
+/Users/sigm/Work/InfotexTask/build/Task/CMakeFiles/rebuild_cache.dir
+/Users/sigm/Work/InfotexTask/build/Task/Src/CMakeFiles/edit_cache.dir
+/Users/sigm/Work/InfotexTask/build/Task/Src/CMakeFiles/rebuild_cache.dir
+/Users/sigm/Work/InfotexTask/build/Task/Src/Library/CMakeFiles/Library.dir
+/Users/sigm/Work/InfotexTask/build/Task/Src/Library/CMakeFiles/edit_cache.dir
+/Users/sigm/Work/InfotexTask/build/Task/Src/Library/CMakeFiles/rebuild_cache.dir
+/Users/sigm/Work/InfotexTask/build/Task/Src/User/CMakeFiles/UserTest.dir
+/Users/sigm/Work/InfotexTask/build/Task/Src/User/CMakeFiles/edit_cache.dir
+/Users/sigm/Work/InfotexTask/build/Task/Src/User/CMakeFiles/rebuild_cache.dir

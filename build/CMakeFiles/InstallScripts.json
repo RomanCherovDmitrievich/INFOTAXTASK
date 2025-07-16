@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/sigm/Work/InfotexTask/build/cmake_install.cmake",
+		"/Users/sigm/Work/InfotexTask/build/Task/cmake_install.cmake",
+		"/Users/sigm/Work/InfotexTask/build/Task/Src/cmake_install.cmake",
+		"/Users/sigm/Work/InfotexTask/build/Task/Src/Library/cmake_install.cmake",
+		"/Users/sigm/Work/InfotexTask/build/Task/Src/User/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

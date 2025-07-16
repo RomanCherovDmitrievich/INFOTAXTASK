@@ -1,0 +1,8 @@
+add_subdirectory(Src)
+if(NOT Task_TESTING)
+  message(STATUS "Тестирование проекта Task выключено.")
+elseif(IS_SUBPROJECT)
+  message(STATUS "Task не тестируется в режиме подмодуля.")
+else()
+  add_subdirectory(Tests)
+endif()

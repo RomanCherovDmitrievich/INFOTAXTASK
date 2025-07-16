@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -dynamiclib -Wl,-headerpad_max_install_names -o ../../../lib/libLibrary.dylib -install_name @rpath/libLibrary.dylib CMakeFiles/Library.dir/private/Magazine.cpp.o
