@@ -7,9 +7,9 @@
   "cmake.options.statusBarVisibility": "compact",
   "cmake.generator": "",
   "files.associations": {
+    "*.dbclient-js": "javascript",
     "*.sqlbook": "sql",
     "*.ndjson": "jsonl",
-    "*.dbclient-js": "javascript",
     "filesystem": "cpp",
     "cmath": "cpp",
     "limits": "cpp",
@@ -18,7 +18,11 @@
     "algorithm": "cpp",
     "string": "cpp",
     "list": "cpp",
-    "istream": "cpp"
+    "istream": "cpp",
+    "ios": "cpp"
   },
+    "cSpell.words": [
+    "потокобезопасно",
+  ],
   "C_Cpp_Runner.msvcBatchPath": ""
 }
