@@ -8,7 +8,8 @@ cmake .. -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_COMPILER=gcc-15 -DCMAKE_CXX_COMPILER=
 
 Сборка
 make -j$(sysctl -n hw.logicalcpu)
-2. Для сбокри динамической библиотеки
+
+2. Для сборки динамической библиотеки
 Очистка и подготовка
 rm -rf build-shared
 mkdir build-shared && cd build-shared
