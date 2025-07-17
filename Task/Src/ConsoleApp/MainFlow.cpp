@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 
+// Вывод информации о способе использования программы
 void printUsage() {
     std::cout << "Usage:\n"
               << "  ConsoleApp <log_file> [default_level]\n"
@@ -11,6 +12,7 @@ void printUsage() {
               << "  ConsoleApp logs/app.log WARNING\n";
 }
 
+// Проверяет корректность уровня логирования.
 bool isValidLevel(const std::string& level) {
     return level == "INFO" || level == "WARNING" || level == "ERROR";
 }
@@ -65,7 +67,7 @@ int main(int argc, char* argv[]) {
             std::cout << "Logged: [" << level << "] " << message << "\n";
         }
 
-    } catch (const std::exception& e) {
+    } catch (const std::exception& e) { // Обработка ошибок
         std::cerr << "Error: " << e.what() << "\n";
         return 1;
     }

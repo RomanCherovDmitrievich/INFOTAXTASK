@@ -4,9 +4,9 @@
 # compile CXX with /opt/homebrew/bin/g++-15
 CXX_DEFINES = -DLIBRARY_EXPORTS -DLibrary_EXPORTS
 
-CXX_INCLUDES = -I/Users/sigm/Work/InfotexTask/Task/Src/Library
+CXX_INCLUDES = -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Users/sigm/Work/InfotexTask/Task/Src/Library
 
-CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fPIC -D__STDC_WANT_LIB_EXT1__=0
+CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fPIC -D__STDC_WANT_LIB_EXT1__=0 -isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -Wno-implicit-function-declaration
 
-CXX_FLAGS = -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fPIC -D__STDC_WANT_LIB_EXT1__=0
+CXX_FLAGS = -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -fPIC -D__STDC_WANT_LIB_EXT1__=0 -isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -Wno-implicit-function-declaration
 

@@ -18,8 +18,8 @@ bool ThreadSafeQueue::pop(LogTask& task) {
 }
 
 // Инициализация системы логирования.
-WorkFlow::WorkFlow(const std::string& logFilePath, const std::string& defaultLevel)
-    : isRunning(true), defaultLevel(defaultLevel)  {
+WorkFlow::WorkFlow(const std::string& logFilePath, const std::string& level)
+    : isRunning(true), defaultLevel(level)  {
     log = LogFactory::createFileLog(logFilePath); // - создаём лог
     workerThread = std::thread(&WorkFlow::processTasks, this); // - запускаем поток обработки задач
 }

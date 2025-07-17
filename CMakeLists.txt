@@ -9,6 +9,20 @@ project ("INFOTEXTASK" LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 
+####### Исправление ошибки с "_bonus.h"
+if(APPLE AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    # Отключаем проблемные системные заголовки
+    add_compile_options(
+        -D__STDC_WANT_LIB_EXT1__=0
+        -isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+        -Wno-implicit-function-declaration
+    )
+    include_directories(
+        /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+    )
+endif()
+#######
+
 if(APPLE)
     add_compile_options(-D__STDC_WANT_LIB_EXT1__=0)
     message(STATUS "Disabling __STDC_WANT_LIB_EXT1__ for MacOS build")
