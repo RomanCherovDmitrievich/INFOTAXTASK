@@ -1,2 +1,0 @@
-/Users/sigm/Work/InfotexTask/out/build/Clang 15.0.0 arm64-apple-darwin23.4.0/CMakeFiles/edit_cache.dir
-/Users/sigm/Work/InfotexTask/out/build/Clang 15.0.0 arm64-apple-darwin23.4.0/CMakeFiles/rebuild_cache.dir
