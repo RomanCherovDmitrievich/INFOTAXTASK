@@ -2,16 +2,6 @@
 #include <iostream>
 #include <string>
 
-// Вывод информации о способе использования программы
-void printUsage() {
-    std::cout << "Usage:\n"
-              << "  ConsoleApp <log_file> [default_level]\n"
-              << "  Default level: INFO\n"
-              << "  Available levels: INFO, WARNING, ERROR\n"
-              << "Example:\n"
-              << "  ConsoleApp logs/app.log WARNING\n";
-}
-
 // Проверяет корректность уровня логирования.
 bool isValidLevel(const std::string& level) {
     return level == "INFO" || level == "WARNING" || level == "ERROR";
@@ -19,7 +9,6 @@ bool isValidLevel(const std::string& level) {
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
-        printUsage();
         return 1;
     }
 
@@ -29,8 +18,7 @@ int main(int argc, char* argv[]) {
     if (argc > 2) {
         defaultLevel = argv[2];
         if (!isValidLevel(defaultLevel)) {
-            std::cerr << "Error: Invalid level '" << defaultLevel << "'\n";
-            printUsage();
+            std::cerr << "Ошибка: Неверный уровень'" << defaultLevel << "'\n";
             return 1;
         }
     }
@@ -38,10 +26,10 @@ int main(int argc, char* argv[]) {
     try {
         WorkFlow worker(logFile, defaultLevel);
 
-        std::cout << "Logger started. Default level: " << defaultLevel << "\n"
-                  << "Enter messages in format: '<message> [LEVEL]'\n"
-                  << "Example: 'Hello ERROR'\n"
-                  << "Press Ctrl+C to exit\n";
+        std::cout << "Приложение работает. Уровень сообщений по умолчанию: " << defaultLevel << "\n"
+                  << "Сообщение выглядит: '<message> [LEVEL]'\n"
+                  << "Пример: 'Hello ERROR'\n"
+                  << "Нажмите Ctrl+C для выхода\n";
 
         std::string input;
         while (std::getline(std::cin, input)) {
@@ -64,11 +52,11 @@ int main(int argc, char* argv[]) {
             }
 
             worker.addTask(message, level);
-            std::cout << "Logged: [" << level << "] " << message << "\n";
+            std::cout << "Сообщение:" << message << "[" << level << "] "  << "\n";
         }
 
     } catch (const std::exception& e) { // Обработка ошибок
-        std::cerr << "Error: " << e.what() << "\n";
+        std::cerr << "Ошибка: " << e.what() << "\n";
         return 1;
     }
 

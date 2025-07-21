@@ -1,4 +1,3 @@
-// TestLog.hpp
 #pragma once
 #include "Test.h"  // Базовый класс для тестов
 

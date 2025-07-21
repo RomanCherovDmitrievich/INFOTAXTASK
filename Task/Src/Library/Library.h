@@ -24,13 +24,13 @@ public:
 // Реализация FileLogger
 class LIBRARY_API FileLog : public ILog {
 public:
-    explicit FileLog(const std::string& logFilePath); // запрещает неявное преобразование строки в FileLog
-    void log(const std::string& message, const std::string& level) override; //Реализация виртуального метода из ILog
+    explicit FileLog(const std::string& logFilePath); // Запрещает неявное преобразование строки в FileLog
+    void log(const std::string& message, const std::string& level) override; // Реализация виртуального метода из ILog
     ~FileLog();
 
 private:
-    std::ofstream logFile; // - поток для записи в файл
-    std::string filePath; // - путь к файлу лога
+    std::ofstream logFile; // Поток для записи в файл
+    std::string filePath; // Путь к файлу лога
 };
 
 // Статический метод создания лога

@@ -10,18 +10,18 @@ void ThreadSafeQueue::push(const LogTask& task) {
 
 // Извлечение задачи из очереди
 bool ThreadSafeQueue::pop(LogTask& task) {
-    std::unique_lock<std::mutex> lock(mtx); // - блокируем мьютекс
+    std::unique_lock<std::mutex> lock(mtx); // Блокируем мьютекс
     cv.wait(lock, [this] { return !queue.empty(); }); // Ожидаем задачи
-    task = queue.front(); //  - копируем задачу
-    queue.pop(); // - удаляем задачу из очереди
+    task = queue.front(); //  Копируем задачу
+    queue.pop(); // Удаляем задачу из очереди
     return true;
 }
 
 // Инициализация системы логирования.
 WorkFlow::WorkFlow(const std::string& logFilePath, const std::string& level)
     : isRunning(true), defaultLevel(level)  {
-    log = LogFactory::createFileLog(logFilePath); // - создаём лог
-    workerThread = std::thread(&WorkFlow::processTasks, this); // - запускаем поток обработки задач
+    log = LogFactory::createFileLog(logFilePath); // Создаёт лог
+    workerThread = std::thread(&WorkFlow::processTasks, this); // Запускает поток обработки задач
 }
 
 WorkFlow::~WorkFlow() {
@@ -37,8 +37,8 @@ void WorkFlow::addTask(const std::string& message, const std::string& level) {
 void WorkFlow::processTasks() {
     while (isRunning) {
         LogTask task;
-        if (tasks.pop(task)) { // Извлекаем задачу (блокируем, если очередь пуста)
-            log->log(task.message, task.level); // Выполняем запись в лог
+        if (tasks.pop(task)) { // Извлекает задачу (блокирует, если очередь пуста)
+            log->log(task.message, task.level); // Выполняет запись в лог
         }
     }
 }
@@ -48,6 +48,6 @@ void WorkFlow::stop() {
     isRunning = false;
     tasks.push({"", ""});  // Разблокировать поток
     if (workerThread.joinable()) {
-        workerThread.join(); // - ожидание завершения потока
+        workerThread.join(); // Ожидание завершения потока
     }
 }

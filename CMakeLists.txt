@@ -71,20 +71,7 @@ else()
   set(CMAKE_DOCUMENTS_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_BUILD_TYPE}/doc)
 endif()
 
-#Настройка Юнит тестов
-#option(TASK_TESTING "Переменная, которая включает построение и запуск автотестов в момент сборки." ON)
-#option(TASK_COVERAGE "Переменная, которая включает сбор метрик покрытия unit-тестами." ON)
-
-#set(GTEST_VERSION "release-1.12.1" CACHE STRING "Google test version 1.12.1")
-#set(GTEST_VERSION "main" CACHE STRING "Google test main version")
-#enable_testing()
-
 option(BUILD_SHARED_LIBS "Собирать динамические библиотеки" ON)
-
-#####
-#add_executable(UserTest UserTest.cpp)
-#target_link_libraries(UserTest PRIVATE Library)
-#####
 
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 message(STATUS "Output dir (bin): ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")

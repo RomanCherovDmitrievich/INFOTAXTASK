@@ -1,4 +1,3 @@
-// TestWorkFlow.hpp
 #pragma once
 #include "Test.h"  // Ваш базовый класс для тестов
 

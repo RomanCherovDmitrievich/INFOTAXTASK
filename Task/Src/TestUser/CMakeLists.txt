@@ -8,19 +8,10 @@ if(NOT TARGET Library)
 endif()
 target_link_libraries(UserTest Library)
 
-#target_include_directories(User PRIVATE ${CMAKE_SOURCE_DIR}/Task/Src/Library)
-
 set_property(TARGET UserTest PROPERTY COMPILE_WARNING_AS_ERROR ON)
 
 #Настройки компилятора
-#target_compile_options(User PRIVATE ${DEFAULT_COMPILE_FLAGS})
-if(MSVC)
-  target_compile_options(UserTest PRIVATE /W4 /WX)
-else()
   target_compile_options(UserTest PRIVATE -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wcast-align -Wconversion -Wsign-conversion -Wnull-dereference)
-endif()
-
-
 
 # Настройки для динамической библиотеки (только если Library собрана как SHARED)
 if(BUILD_SHARED_LIBS AND NOT MSVC)

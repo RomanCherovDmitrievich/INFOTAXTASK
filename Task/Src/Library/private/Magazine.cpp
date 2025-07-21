@@ -11,12 +11,13 @@ FileLog::FileLog(const std::string& logFilePath) : filePath(logFilePath) {
     logFile.open(logFilePath, std::ios::app);
 }
 
-//Принимаем сообщение и его уровень, смотрим время получения сообщения и тоже записываем в файл
+//Принимаем сообщение и его уровень, смотрим время получения сообщения и записываем в файл
 void FileLog::log(const std::string& message, const std::string& level) {
     auto now = std::chrono::system_clock::now();
     auto now_time = std::chrono::system_clock::to_time_t(now);
+    logFile << message << "[" << level << "] " << std::endl;
     logFile << std::put_time(std::localtime(&now_time), "[%Y-%m-%d %H:%M:%S] ");
-    logFile << "[" << level << "] " << message << std::endl;
+    
 }
 
 //Уничтожаем объект logfile
