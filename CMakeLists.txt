@@ -1,15 +1,10 @@
 cmake_minimum_required(VERSION 3.17.0 FATAL_ERROR)
 
-# Проверка, что используется GCC
-#if(NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-  #  message(FATAL_ERROR "Требуется компилятор GCC! Текущий компилятор: ${CMAKE_CXX_COMPILER_ID}")
-#endif()
-
 project ("INFOTEXTASK" LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 
-#### Решение проблемы с stdlib.h
+#### Настройка путей для "stdlib.h"
 if(APPLE AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     # Полный набор путей для GCC на macOS
     set(GCC_INCLUDE_DIRS
@@ -38,7 +33,7 @@ if(APPLE AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     link_directories(/opt/homebrew/Cellar/gcc/15.1.0/lib/gcc/15)
 endif()
 
-####### Исправление ошибки с "_bonus.h"
+####### Настройка путей для  "_bonus.h"
 if(APPLE AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     # Отключаем проблемные системные заголовки
     add_compile_options(
@@ -57,19 +52,12 @@ if(APPLE)
     message(STATUS "Disabling __STDC_WANT_LIB_EXT1__ for MacOS build")
 endif()
 
-if(MSVC)
-  set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_BUILD_TYPE})
-  set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_BUILD_TYPE})
-  set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_BUILD_TYPE})
-  set(SHORT_RPATH "./")
-  set(CMAKE_DOCUMENTS_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_BUILD_TYPE}/Doc)
-else()
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_BUILD_TYPE}/bin)
   set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_BUILD_TYPE}/lib)
   set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_BUILD_TYPE}/lib)
   set(SHORT_RPATH "../lib")
   set(CMAKE_DOCUMENTS_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_BUILD_TYPE}/doc)
-endif()
+
 
 option(BUILD_SHARED_LIBS "Собирать динамические библиотеки" ON)
 
