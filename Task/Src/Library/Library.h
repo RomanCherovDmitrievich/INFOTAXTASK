@@ -22,7 +22,7 @@ public:
 };
 
 // Реализация FileLogger
-class LIBRARY_API FileLog : public ILog {
+class LIBRARY_LOCAL FileLog : public ILog {
 public:
     explicit FileLog(const std::string& logFilePath); // Запрещает неявное преобразование строки в FileLog
     void log(const std::string& message, const std::string& level) override; // Реализация виртуального метода из ILog
