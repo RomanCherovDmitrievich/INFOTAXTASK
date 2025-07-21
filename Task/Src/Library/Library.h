@@ -10,8 +10,8 @@
     #define LIBRARY_API
     #define LIBRARY_LOCAL
 #else // Макросы обеспечивающие экспорт и импорт символов при динамической сборке
-        #define LIBRARY_API __attribute__((visibility("default"))) // Экспортируемые символы
-        #define LIBRARY_LOCAL __attribute__((visibility("hidden"))) // Скрытые символы
+    #define LIBRARY_API __attribute__((visibility("default"))) // Экспортируемые символы
+    #define LIBRARY_LOCAL __attribute__((visibility("hidden"))) // Скрытые символы
 #endif
 
 // Интерфейс для Log
