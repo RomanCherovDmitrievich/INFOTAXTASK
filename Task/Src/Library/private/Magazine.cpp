@@ -15,8 +15,8 @@ FileLog::FileLog(const std::string& logFilePath) : filePath(logFilePath) {
 void FileLog::log(const std::string& message, const std::string& level) {
     auto now = std::chrono::system_clock::now();
     auto now_time = std::chrono::system_clock::to_time_t(now);
-    logFile << message << "[" << level << "] " << std::endl;
-    logFile << std::put_time(std::localtime(&now_time), "[%Y-%m-%d %H:%M:%S] ");
+    logFile << message << " [" << level << "] ";
+    logFile << std::put_time(std::localtime(&now_time), "[%Y-%m-%d %H:%M:%S] ") << std::endl;
     
 }
 
